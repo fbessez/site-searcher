@@ -2,7 +2,7 @@
 
 ### Description
 
-This script takes a domain (ex: https://fabien.bessez.com) and a keyword args (ex: `cookies,cake,chicken`) and returns back the occurrences of each keyword on each webpage within the given domain's sitemap.
+This script takes a domain (ex: https://fabien.bessez.com) and keyword args (ex: `cookies,cake,bread and butter`) and returns back the occurrences of each keyword on each webpage within the given domain's sitemap.
 
 ### Usage
 
