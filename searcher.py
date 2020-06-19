@@ -2,6 +2,7 @@ import argparse
 import re
 import requests
 import pprint
+import time
 from usp.tree import sitemap_tree_for_homepage
 
 def get_args():
@@ -49,4 +50,6 @@ def main():
     pp.pprint(output)
 
 if __name__ == "__main__":
+    start_time = time.time()
     main()
+    print("--- %s seconds ---" % (time.time() - start_time))
