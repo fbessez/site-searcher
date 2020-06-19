@@ -26,7 +26,7 @@ Gets the args from the command line and stores in local variables.
 def main():
     args = get_args()
     keywords, site_url = args.keywords.split(','), args.site_url
-    pp = pprint.PrettyPrinter(indent=4)
+    pp = pprint.PrettyPrinter()
     print(keywords)
     print("You have requested to search for: %s on %s" % (keywords, site_url))
 
@@ -41,6 +41,8 @@ def main():
           occurrence_count = len(occ)
           if occurrence_count > 0:
             output[page.url][keyword] = occurrence_count
+
+        if output[page.url] == {}: output.pop(page.url)
 
     pp.pprint(output)
 
