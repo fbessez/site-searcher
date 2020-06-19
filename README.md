@@ -2,12 +2,14 @@
 
 ### Description
 
-This script takes a domain (ex: https://fabien.bessez.com) and keyword args (ex: `cookies,cake,bread and butter`) and returns back the occurrences of each keyword on each webpage within the given domain's sitemap.
+This script takes a txt file of domains (ex: `sites.txt`) and keyword args (ex: `cookies,cake,bread and butter`) and returns back the occurrences of each keyword on each webpage within the given domain's sitemap.
 
 ### Usage
 
+Fill in `sites.txt` with the URL that you are interested in searching.
+
 ```
-python3 searcher.py <URL> -k="<KEYWORDS,GO,HERE>"
+python3 searcher.py -k="<KEYWORDS,GO,HERE>"
 ```
 
 ### Example
@@ -15,46 +17,47 @@ python3 searcher.py <URL> -k="<KEYWORDS,GO,HERE>"
 ##### Input
 
 ```
-    python3 searcher.py https://fabien.bessez.com --keywords='word and another word,cookies'
+    python3 searcher.py --keywords='word and another word,cookies'
 ```
 
 ##### Output
 
 ```
-https://fabien.bessez.com/pensieve/house-hacker found 1 occurrences of grpc
-https://fabien.bessez.com/pensieve/house-hacker found 0 occurrences of cookies
-https://fabien.bessez.com/pensieve/grpc-at-juvo found 14 occurrences of grpc
-https://fabien.bessez.com/pensieve/grpc-at-juvo found 0 occurrences of cookies
-https://fabien.bessez.com/pensieve/burpsuite-traffic-proxy found 1 occurrences of grpc
-https://fabien.bessez.com/pensieve/burpsuite-traffic-proxy found 0 occurrences of cookies
-https://fabien.bessez.com/pensieve/tags/network-monitoring/ found 1 occurrences of grpc
-https://fabien.bessez.com/pensieve/tags/network-monitoring/ found 0 occurrences of cookies
-https://fabien.bessez.com/pensieve/tags/traffic-proxy/ found 1 occurrences of grpc
-https://fabien.bessez.com/pensieve/tags/traffic-proxy/ found 0 occurrences of cookies
-https://fabien.bessez.com/pensieve/tags/aws/ found 1 occurrences of grpc
-https://fabien.bessez.com/pensieve/tags/aws/ found 0 occurrences of cookies
-https://fabien.bessez.com/pensieve/tags/craigslist/ found 1 occurrences of grpc
-https://fabien.bessez.com/pensieve/tags/craigslist/ found 0 occurrences of cookies
-https://fabien.bessez.com/pensieve/tags/ec-2/ found 1 occurrences of grpc
-https://fabien.bessez.com/pensieve/tags/ec-2/ found 0 occurrences of cookies
-https://fabien.bessez.com/pensieve/tags/go/ found 4 occurrences of grpc
-https://fabien.bessez.com/pensieve/tags/go/ found 0 occurrences of cookies
-https://fabien.bessez.com/pensieve/tags/grpc/ found 7 occurrences of grpc
-https://fabien.bessez.com/pensieve/tags/grpc/ found 0 occurrences of cookies
-https://fabien.bessez.com/pensieve/tags/protobuf/ found 4 occurrences of grpc
-https://fabien.bessez.com/pensieve/tags/protobuf/ found 0 occurrences of cookies
-https://fabien.bessez.com/pensieve/tags/python/ found 1 occurrences of grpc
-https://fabien.bessez.com/pensieve/tags/python/ found 0 occurrences of cookies
-https://fabien.bessez.com/pensieve/tags/redis/ found 1 occurrences of grpc
-https://fabien.bessez.com/pensieve/tags/redis/ found 0 occurrences of cookies
-https://fabien.bessez.com/archive/ found 1 occurrences of grpc
-https://fabien.bessez.com/archive/ found 0 occurrences of cookies
-https://fabien.bessez.com/ found 1 occurrences of grpc
-https://fabien.bessez.com/ found 0 occurrences of cookies
-https://fabien.bessez.com/pensieve/ found 4 occurrences of grpc
-https://fabien.bessez.com/pensieve/ found 0 occurrences of cookies
-https://fabien.bessez.com/pensieve/tags/ found 3 occurrences of grpc
-https://fabien.bessez.com/pensieve/tags/ found 0 occurrences of cookies
+Seaching on https://fabien.bessez.com/pensieve/house-hacker for grpc
+Seaching on https://fabien.bessez.com/pensieve/grpc-at-juvo for grpc
+Seaching on https://fabien.bessez.com/pensieve/burpsuite-traffic-proxy for grpc
+Seaching on https://fabien.bessez.com/pensieve/tags/network-monitoring/ for grpc
+Seaching on https://fabien.bessez.com/pensieve/tags/traffic-proxy/ for grpc
+Seaching on https://fabien.bessez.com/pensieve/tags/aws/ for grpc
+Seaching on https://fabien.bessez.com/pensieve/tags/craigslist/ for grpc
+Seaching on https://fabien.bessez.com/pensieve/tags/ec-2/ for grpc
+Seaching on https://fabien.bessez.com/pensieve/tags/go/ for grpc
+Seaching on https://fabien.bessez.com/pensieve/tags/grpc/ for grpc
+Seaching on https://fabien.bessez.com/pensieve/tags/protobuf/ for grpc
+Seaching on https://fabien.bessez.com/pensieve/tags/python/ for grpc
+Seaching on https://fabien.bessez.com/pensieve/tags/redis/ for grpc
+Seaching on https://fabien.bessez.com/archive/ for grpc
+Seaching on https://fabien.bessez.com/ for grpc
+Seaching on https://fabien.bessez.com/pensieve/ for grpc
+Seaching on https://fabien.bessez.com/pensieve/tags/ for grpc
+failed to search on blablabla
+{'https://fabien.bessez.com/': {'grpc': 1},
+ 'https://fabien.bessez.com/archive/': {'grpc': 1},
+ 'https://fabien.bessez.com/pensieve/': {'grpc': 4},
+ 'https://fabien.bessez.com/pensieve/burpsuite-traffic-proxy': {'grpc': 1},
+ 'https://fabien.bessez.com/pensieve/grpc-at-juvo': {'grpc': 14},
+ 'https://fabien.bessez.com/pensieve/house-hacker': {'grpc': 1},
+ 'https://fabien.bessez.com/pensieve/tags/': {'grpc': 3},
+ 'https://fabien.bessez.com/pensieve/tags/aws/': {'grpc': 1},
+ 'https://fabien.bessez.com/pensieve/tags/craigslist/': {'grpc': 1},
+ 'https://fabien.bessez.com/pensieve/tags/ec-2/': {'grpc': 1},
+ 'https://fabien.bessez.com/pensieve/tags/go/': {'grpc': 4},
+ 'https://fabien.bessez.com/pensieve/tags/grpc/': {'grpc': 7},
+ 'https://fabien.bessez.com/pensieve/tags/network-monitoring/': {'grpc': 1},
+ 'https://fabien.bessez.com/pensieve/tags/protobuf/': {'grpc': 4},
+ 'https://fabien.bessez.com/pensieve/tags/python/': {'grpc': 1},
+ 'https://fabien.bessez.com/pensieve/tags/redis/': {'grpc': 1},
+ 'https://fabien.bessez.com/pensieve/tags/traffic-proxy/': {'grpc': 1}}
 ```
 
 ### Setup + Requirements
