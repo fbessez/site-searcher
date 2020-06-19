@@ -7,7 +7,7 @@ This script takes a domain (ex: https://fabien.bessez.com) and a keyword args (e
 ### Usage
 
 ```
-python3 searcher.py <URL> <KEYWORDS,GO,HERE>
+python3 searcher.py <URL> -k="<KEYWORDS,GO,HERE>"
 ```
 
 ### Example
@@ -15,7 +15,7 @@ python3 searcher.py <URL> <KEYWORDS,GO,HERE>
 ##### Input
 
 ```
-    python3 searcher.py https://fabien.bessez.com grpc,cookies
+    python3 searcher.py https://fabien.bessez.com --keywords='word and another word,cookies'
 ```
 
 ##### Output
