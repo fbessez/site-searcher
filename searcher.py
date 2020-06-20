@@ -29,36 +29,32 @@ def site_urls():
     return site_urls
 
 def search_site(site, keywords, data):
-    # TODO: Save every 20 searches
     try:
         tree = sitemap_tree_for_homepage(site)
         counter = 0
         for page in tree.all_pages():
-            page_text = requests.get(page.url).text
+            page_text = ''
             for keyword in keywords:
                 if not data.get(page.url): data[page.url] = {}
-                if data[page.url].get(keyword): continue
+                if data[page.url].get(keyword, -1) >= 0: continue
+                if not page_text:
+                    print('getting page text') # only get page_text if necessary
+                    page_text = requests.get(page.url).text
                 print("Seaching on %s for %s" % (page.url, keyword))
                 data = store_match_count(data, page.url, page_text, keyword)
 
-            if not data.get(page.url):
-                data.pop(page.url)
-
             counter += 1
-
-            if counter > 20:
+            if counter >= 20:
                 save_data(data)
                 counter = 0
     except:
         print("failed to search on %s" % site)
 
-    # print(data)
     return data
 
 def store_match_count(data, page_url, page_text, keyword):
     occurrences = len(re.findall(keyword, page_text))
-    if occurrences > 0:
-        data[page_url][keyword] = occurrences
+    data[page_url][keyword] = occurrences
     return data
 
 def save_data(data):

@@ -8,9 +8,19 @@ This script takes a txt file of domains (ex: `sites.txt`) and keyword args (ex: 
 
 Fill in `sites.txt` with the URL that you are interested in searching.
 
+Then run the following to output the raw data to `data.json`
+
 ```
 python3 searcher.py -k="<KEYWORDS,GO,HERE>"
 ```
+
+Then, if you want to filter out the not-found keywords and the sites where no keywords were found, run:
+
+```
+python3 filter.py
+```
+
+It will output the filtered data to `filtered_data.json`
 
 ### Example
 
