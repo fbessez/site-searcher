@@ -7,7 +7,7 @@ import pprint
 import time
 from usp.tree import sitemap_tree_for_homepage
 
-def get_args():
+def args():
     """
     Gets the args from the command line and stores in local variables.
     """
@@ -23,10 +23,16 @@ def get_args():
 
     return args
 
+def site_urls():
+    sites_file = open('sites.txt', 'r')
+    site_urls = sites_file.read().splitlines()
+    return site_urls
+
 def search_site(site, keywords, data):
     # TODO: Save every 20 searches
     try:
         tree = sitemap_tree_for_homepage(site)
+        counter = 0
         for page in tree.all_pages():
             page_text = requests.get(page.url).text
             for keyword in keywords:
@@ -37,6 +43,12 @@ def search_site(site, keywords, data):
 
             if not data.get(page.url):
                 data.pop(page.url)
+
+            counter += 1
+
+            if counter > 20:
+                save_data(data)
+                counter = 0
     except:
         print("failed to search on %s" % site)
 
@@ -49,12 +61,8 @@ def store_match_count(data, page_url, page_text, keyword):
         data[page_url][keyword] = occurrences
     return data
 
-def site_urls():
-    sites_file = open('sites.txt', 'r')
-    site_urls = sites_file.read().splitlines()
-    return site_urls
-
 def save_data(data):
+    print("SAVING DATA...")
     file_path = 'data.json'
     with open(file_path, 'w') as data_file:
         json.dump(data, data_file)
@@ -73,15 +81,13 @@ def fetch_data():
         return data
 
 def main():
-    pp = pprint.PrettyPrinter()
-    keywords = get_args().keywords.split(',')
-
+    keywords = args().keywords.split(',')
     data = fetch_data()
+
     for site_url in site_urls():
         data = search_site(site_url, keywords, data)
+        print("Saving data for %s" % site_url)
         save_data(data)
-
-    pp.pprint(data)
 
 if __name__ == "__main__":
     start_time = time.time()
