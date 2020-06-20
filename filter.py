@@ -11,13 +11,15 @@ def filter_data(data):
                 keywords_to_delete.append(keyword)
 
         for keyword_to_delete in keywords_to_delete:
+            print(keyword_to_delete)
             del data[site][keyword_to_delete]
 
+        print(data.get(site))
         if not data.get(site):
             sites_to_delete.append(site)
 
     for site_to_delete in sites_to_delete:
-        del data[site]
+        del data[site_to_delete]
 
     return data
 

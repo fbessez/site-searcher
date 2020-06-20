@@ -1,1 +1,23 @@
-{"https://fabien.bessez.com/pensieve/house-hacker": {"grpc": 1, "fabien": 16, "cookies": 0}, "https://fabien.bessez.com/pensieve/grpc-at-juvo": {"grpc": 14, "fabien": 16, "cookies": 0}, "https://fabien.bessez.com/pensieve/burpsuite-traffic-proxy": {"grpc": 1, "fabien": 16, "cookies": 0}, "https://fabien.bessez.com/pensieve/tags/network-monitoring/": {"grpc": 1, "fabien": 16, "cookies": 0}, "https://fabien.bessez.com/pensieve/tags/traffic-proxy/": {"grpc": 1, "fabien": 16, "cookies": 0}, "https://fabien.bessez.com/pensieve/tags/aws/": {"grpc": 1, "fabien": 16, "cookies": 0}, "https://fabien.bessez.com/pensieve/tags/craigslist/": {"grpc": 1, "fabien": 16, "cookies": 0}, "https://fabien.bessez.com/pensieve/tags/ec-2/": {"grpc": 1, "fabien": 16, "cookies": 0}, "https://fabien.bessez.com/pensieve/tags/go/": {"grpc": 4, "fabien": 16, "cookies": 0}, "https://fabien.bessez.com/pensieve/tags/grpc/": {"grpc": 7, "fabien": 16, "cookies": 0}, "https://fabien.bessez.com/pensieve/tags/protobuf/": {"grpc": 4, "fabien": 16, "cookies": 0}, "https://fabien.bessez.com/pensieve/tags/python/": {"grpc": 1, "fabien": 16, "cookies": 0}, "https://fabien.bessez.com/pensieve/tags/redis/": {"grpc": 1, "fabien": 16, "cookies": 0}, "https://fabien.bessez.com/archive/": {"grpc": 1, "fabien": 16, "cookies": 0}, "https://fabien.bessez.com/": {"grpc": 1, "fabien": 8, "cookies": 0}, "https://fabien.bessez.com/pensieve/": {"grpc": 4, "fabien": 16, "cookies": 0}, "https://fabien.bessez.com/pensieve/tags/": {"grpc": 3, "fabien": 16, "cookies": 0}}
+{
+  "https://fabien.bessez.com/pensieve/house-hacker": { "cookies": 0 },
+  "https://fabien.bessez.com/pensieve/grpc-at-juvo": { "cookies": 0 },
+  "https://fabien.bessez.com/pensieve/burpsuite-traffic-proxy": {
+    "cookies": 0
+  },
+  "https://fabien.bessez.com/pensieve/tags/network-monitoring/": {
+    "cookies": 0
+  },
+  "https://fabien.bessez.com/pensieve/tags/traffic-proxy/": { "cookies": 0 },
+  "https://fabien.bessez.com/pensieve/tags/aws/": { "cookies": 0 },
+  "https://fabien.bessez.com/pensieve/tags/craigslist/": { "cookies": 0 },
+  "https://fabien.bessez.com/pensieve/tags/ec-2/": { "cookies": 0 },
+  "https://fabien.bessez.com/pensieve/tags/go/": { "cookies": 0 },
+  "https://fabien.bessez.com/pensieve/tags/grpc/": { "cookies": 0 },
+  "https://fabien.bessez.com/pensieve/tags/protobuf/": { "cookies": 0 },
+  "https://fabien.bessez.com/pensieve/tags/python/": { "cookies": 0 },
+  "https://fabien.bessez.com/pensieve/tags/redis/": { "cookies": 0 },
+  "https://fabien.bessez.com/archive/": { "cookies": 0 },
+  "https://fabien.bessez.com/": { "cookies": 0 },
+  "https://fabien.bessez.com/pensieve/": { "cookies": 0 },
+  "https://fabien.bessez.com/pensieve/tags/": { "cookies": 0 }
+}
